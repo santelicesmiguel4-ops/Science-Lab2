@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Science Lab Inventory</title>
+  <style>
+    body { font-family: Arial; padding:20px; }
+    .item-card { border:1px solid #ccc; padding:15px; margin:10px; border-radius:10px; width:250px; display:inline-block; }
+    button { margin-top:5px; }
+
+    .modal-bg {
+      display:none;
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background:rgba(0,0,0,0.5);
+      justify-content:center;
+      align-items:center;
+    }
+
+    .modal {
+      background:white;
+      padding:20px;
+      border-radius:10px;
+      width:300px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Science Lab Inventory</h2>
+<a href="admin.html">Go to Admin Panel</a>
+
+<div id="inventory"></div>
+
+<!-- Request Modal -->
+<div id="requestModal" class="modal-bg">
+  <div class="modal">
+    <h3>Borrow Request</h3>
+    <input type="text" id="studentName" placeholder="Your Name"><br><br>
+    <input type="text" id="studentId" placeholder="Student ID"><br><br>
+    <input type="number" id="requestQty" placeholder="Quantity"><br><br>
+    <input type="number" id="borrowDays" placeholder="Days to borrow"><br><br>
+    <button id="submitRequest">Submit</button>
+    <button onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
+<script>
+const inventoryContainer = document.getElementById("inventory");
+const requestModal = document.getElementById("requestModal");
+let currentIndex = null;
+
+function displayItems() {
+  const items = JSON.parse(localStorage.getItem("inventory")) || [];
+  inventoryContainer.innerHTML = "";
+
+  items.forEach((item, index) => {
+    const div = document.createElement("div");
+    div.classList.add("item-card");
+
+    div.innerHTML = `
+      <img src="${item.image}" width="100%">
+      <h4>${item.name}</h4>
+      <p>Type: ${item.type}</p>
+      <p>Qty: ${item.quantity}</p>
+    `;
+
+    const requestBtn = document.createElement("button");
+    requestBtn.textContent = "Request";
+    requestBtn.disabled = item.quantity === 0;
+    requestBtn.onclick = () => openModal(index);
+
+    div.appendChild(requestBtn);
+    inventoryContainer.appendChild(div);
+  });
+}
+
+function openModal(index) {
+  currentIndex = index;
+  requestModal.style.display = "flex";
+}
+
+function closeModal() {
+  requestModal.style.display = "none";
+}
+
+document.getElementById("submitRequest").onclick = function() {
+  const name = document.getElementById("studentName").value;
+  const id = document.getElementById("studentId").value;
+  const qty = parseInt(document.getElementById("requestQty").value);
+  const days = parseInt(document.getElementById("borrowDays").value);
+
+  const items = JSON.parse(localStorage.getItem("inventory")) || [];
+
+  if (!name || !id || !qty || !days) return;
+
+  if (qty > items[currentIndex].quantity) {
+    alert("Not enough stock.");
+    return;
+  }
+
+  const dueDate = new Date();
+  dueDate.setDate(dueDate.getDate() + days);
+
+  const requests = JSON.parse(localStorage.getItem("requests")) || [];
+
+  requests.push({
+    itemIndex: currentIndex,
+    itemName: items[currentIndex].name,
+    student: name,
+    studentId: id,
+    quantity: qty,
+    due: dueDate.toISOString(),
+    status: "Pending"
+  });
+
+  localStorage.setItem("requests", JSON.stringify(requests));
+  alert("Request submitted!");
+  closeModal();
+};
+
+window.onload = displayItems;
+</script>
+
+</body>
+</html>
