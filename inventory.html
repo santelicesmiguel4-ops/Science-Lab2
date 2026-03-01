@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory</title>
+    <link rel="stylesheet" href="inventory.css">
+</head>
+
+<body>
+
+<nav>
+    <div class="linkss">
+        <img src="logo.jpg" alt="" width="40px">
+        <h2 class="logoname">Melchora Aquino High School - Inventory</h2>
+    </div>
+
+    <div class="home1">
+        <a href="capstone.html" class="button2">Home</a>
+        <a href="Admincontrols.html" class="button2" id="admincontrol">Admin Control</a>
+        <button id="login1" class="button2">Log-in as Admin</button>
+        <button id="add1" class="button2">Add Items</button>
+    </div>
+</nav>
+
+
+<div id="inventory" class="inventory"></div>
+
+
+<div id="floating2" style="display:none;">
+    <div id="floating1">
+        <h2>Add / Edit Item</h2>
+        <input type="file" id="img" accept="image/*">
+        <input type="text" id="name" placeholder="Item Name">
+        <input type="number" id="quantity" placeholder="Quantity" min="1">
+        <select  id="location">
+            <option value="" disabled selected hidden>Select Location</option>
+            <option value="Cabinet 1">Cabinet 1</option>
+            <option value="Cabinet2">Cabinet 2</option>
+            <option value="Cabinet3">Cabinet 3</option>
+            <option value="Cabinet4">Cabinet 4</option>
+        </select>
+             <select id="type">
+             <option value="" disabled selected hidden>Select Type</option>
+             <option value="returnable">Returnable</option>
+             <option value="consumable">Consumable</option>
+         </select>
+        <button id="save" class="button2">Save</button>
+        <button id="cancel" class="button2">Cancel</button>
+    </div>
+</div>
+
+
+<div id="reqform" style="display:none;">
+    <div id="reqformcontent">
+        <h2>Request Form</h2>
+        <input type="text" id="reqname" placeholder="Full Name" required class="reqbtn">
+        <input type="text" id="section" placeholder="Grade and Section" required class="reqbtn">
+        <input type="number" id="quantity1" placeholder="Quantity" min="1" required class="reqbtn">
+        <input type="number" id="days" placeholder="How Many Days" min="1" required class="reqbtn">
+        <br>
+        <button id="submitreq" class="b1">Submit</button>
+        <button id="cancelreq" class="b1">Cancel</button>
+    </div>
+</div>
+
+<script src="inventory.js"></script>
+
+</body>
+</html>
+           

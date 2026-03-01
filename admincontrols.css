@@ -1,0 +1,266 @@
+body{
+    margin-top: 80px;
+    margin: 0px;
+    background-color: gold;
+    background-image: url();
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+#sb1{
+width: 150px;
+height: 22px;
+padding: 8px 2px 2px 2px;
+}
+#sb{
+    width: 15px;
+}
+nav{
+    background-color: rgb(36, 16, 223);
+box-shadow: 0 0 5px 3px rgba(0, 0,0, 0.5);
+padding: 15px 0px 0px 0px;
+position :fixed ;
+top: 0;
+width: 100%;
+height: 60px;
+}
+
+.linkss{
+    display: inline-block;
+    margin-left: 10px;
+    
+}
+
+.logoname{
+    display: inline-block;
+    margin: 0px 0px 0px 0px;
+    position: relative;
+    top: -11px;
+    color: gold;
+}
+.home1{
+    float: right;
+    position: relative;
+    top: 10px;
+    margin-right: 20px;
+    
+} 
+
+.link2{
+    color: blue;
+    margin: -7px 7px 7px 7px;
+    background-color: gold;
+    padding: 10px 10px 10px 10px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+
+}
+.link2:hover{
+    color:black;
+}
+.link22{
+background-color: rgb(0, 47, 255);
+padding:10px 25px;
+border-radius: 20px;
+color: gold;
+
+}
+.link21{
+    display: inline-block;
+    margin-left: 85px;
+    margin-top: 0px;
+    color: gold;
+}
+.link22:hover{
+    color: black;
+}
+.body1{
+    background-color: gold;
+    width: 200px;
+    height: 250px;
+    border-color: blue; 
+    margin-top: 15px;
+    display: inline-block;
+    margin-right: 20px;
+}
+#body11{
+
+    margin-top: 80px;
+}
+h2{
+   color: gold;
+   display: inline-block;
+ }
+#texthead{
+    margin-left: 200px;
+    font-size: 40px;
+}
+h3{
+    margin-top: 80px;
+}
+
+#maincontainer {
+  width: 98%;
+  padding: 20px;
+  
+}
+body{
+    margin-top: 80px;
+    margin: 0px;
+    background-color: gold;
+    background-image: url();
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+#sb1{
+width: 150px;
+height: 22px;
+padding: 8px 2px 2px 2px;
+}
+#sb{
+    width: 15px;
+}
+nav{
+    background-color: rgb(36, 16, 223);
+box-shadow: 0 0 5px 3px rgba(0, 0,0, 0.5);
+padding: 15px 0px 0px 0px;
+position :fixed ;
+top: 0;
+width: 100%;
+height: 60px;
+}
+
+.linkss{
+    display: inline-block;
+    margin-left: 10px;
+    
+}
+
+.logoname{
+    display: inline-block;
+    margin: 0px 0px 0px 0px;
+    position: relative;
+    top: -11px;
+    color: gold;
+}
+.home1{
+    float: right;
+    position: relative;
+    top: 10px;
+    margin-right: 20px;
+    
+} 
+
+.link2{
+    color: blue;
+    margin: -7px 7px 7px 7px;
+    background-color: gold;
+    padding: 10px 10px 10px 10px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+
+}
+.link2:hover{
+    color:black;
+}
+.link22{
+background-color: rgb(0, 47, 255);
+padding:10px 25px;
+border-radius: 20px;
+color: gold;
+
+}
+.link21{
+    display: inline-block;
+    margin-left: 85px;
+    margin-top: 0px;
+    color: gold;
+}
+.link22:hover{
+    color: black;
+}
+.body1{
+    background-color: gold;
+    width: 200px;
+    height: 250px;
+    border-color: blue; 
+    margin-top: 15px;
+    display: inline-block;
+    margin-right: 20px;
+}
+#body11{
+
+    margin-top: 80px;
+}
+h2{
+   color: gold;
+   display: inline-block;
+ }
+#texthead{
+    margin-left: 200px;
+    font-size: 40px;
+}
+h3{
+    margin-top: 80px;
+}
+
+#maincontainer {
+  width: 98%;
+  padding: 20px;
+  
+}
+#inventory {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  justify-content: center; 
+}
+#requests {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.item-card {
+
+  flex: 1 1 200px;     
+  max-width: 300px;    
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  background: blue;
+}
+#dashboard {
+  padding: 20px;
+  display: inline-block;
+  background-color: blue;
+  color: gold;
+}
+
+
+
